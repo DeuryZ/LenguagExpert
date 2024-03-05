@@ -1,6 +1,8 @@
 package com.example.LenguagExpert;
 
+import com.example.LenguagExpert.domain.service.serviceImpl.AttendanceServiceImpl;
 import com.example.LenguagExpert.domain.service.serviceImpl.TopicServiceImpl;
+import com.example.LenguagExpert.persistence.entity.Attendance;
 import com.example.LenguagExpert.persistence.entity.Topic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +17,7 @@ public class LenguagExpertApplication {
 		ConfigurableApplicationContext contexto = SpringApplication.run(LenguagExpertApplication.class, args);
 
 		TopicServiceImpl topicService = contexto.getBean(TopicServiceImpl.class);
-//		EditorialServiceImpl editorialService = contexto.getBean(EditorialServiceImpl.class);
+//		AttendanceServiceImpl attendanceService = contexto.getBean(AttendanceServiceImpl.class);
 //		LibroServiceImpl libroService = contexto.getBean(LibroServiceImpl.class);
 //		ResumenLibroService resumenService = contexto.getBean(ResumenLibroServiceImpl.class);
 //
@@ -48,6 +50,12 @@ public class LenguagExpertApplication {
 
 		//Delete topic
 		//topicService.deleteTopic(1L);
+
+
+//		//Create attendance
+//		Attendance attendance = new Attendance();
+//		attendance.setStatus("test");
+//		attendanceService.saveAttendance(attendance);
 
 
 	}

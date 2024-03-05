@@ -3,12 +3,13 @@ package com.example.LenguagExpert.domain.service.serviceImpl;
 import com.example.LenguagExpert.domain.repository.AttendanceRepository;
 import com.example.LenguagExpert.domain.service.service.AttendanceService;
 import com.example.LenguagExpert.persistence.entity.Attendance;
-import com.example.LenguagExpert.persistence.entity.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AttendanceServiceImpl implements AttendanceService {
 
     private final AttendanceRepository attendanceRepository;
@@ -35,8 +36,9 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public void saveAttendance(Attendance attendance) {
+    public Attendance saveAttendance(Attendance attendance) {
         attendanceRepository.save(attendance);
+        return attendance;
     }
 
     @Override
@@ -45,11 +47,13 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public void updateAttendance(Attendance attendance) {
-        Optional<Attendance> optionalAttendance = attendanceRepository.findById(attendance.getId());
+    public Attendance updateAttendance(Long id, Attendance attendance) {
+        Optional<Attendance> optionalAttendance = attendanceRepository.findById(id);
 
         if (optionalAttendance.isPresent()) {
+
             Attendance attendanceToUpdate = optionalAttendance.get();
+            attendanceToUpdate.setId(id);
             attendanceToUpdate.setDate(attendance.getDate());
             attendanceToUpdate.setClass_id(attendance.getClass_id());
             attendanceToUpdate.setStudent(attendance.getStudent());
@@ -59,7 +63,7 @@ public class AttendanceServiceImpl implements AttendanceService {
             System.out.println("Attendance Updated");
         } else {
             throw new Error("Attendance ID not found " + attendance.getId());
-
         }
+        return attendance;
     }
 }

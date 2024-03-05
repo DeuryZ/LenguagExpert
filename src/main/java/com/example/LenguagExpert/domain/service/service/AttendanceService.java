@@ -7,7 +7,7 @@ import java.util.List;
 public interface AttendanceService {
     List<Attendance> getAllAttendances();
     Attendance getAttendanceById(Long attendanceId);
-    void saveAttendance(Attendance attendance);
+    Attendance saveAttendance(Attendance attendance);
     void deleteAttendance(Long attendanceId);
-    void updateAttendance(Attendance attendance);
+    Attendance updateAttendance(Long id, Attendance attendance);
 }
