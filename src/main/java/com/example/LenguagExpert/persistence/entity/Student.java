@@ -120,6 +120,14 @@ public class Student {
         this.status = status;
     }
 
+    public Set<SpecialActivity> getSpecialActivity() {
+        return specialActivity;
+    }
+
+    public void setSpecialActivity(Set<SpecialActivity> specialActivity) {
+        this.specialActivity = specialActivity;
+    }
+
     // Método toString()
     @Override
     public String toString() {

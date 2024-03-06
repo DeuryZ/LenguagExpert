@@ -104,6 +104,22 @@ public class SpecialActivity {
         this.organizer = organizer;
     }
 
+    public Set<Teacher> getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(Set<Teacher> teachers) {
+        this.teachers = teachers;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
+    }
+
     // Método toString()
     @Override
     public String toString() {

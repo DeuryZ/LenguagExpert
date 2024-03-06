@@ -10,5 +10,5 @@ public interface StudentService {
     void saveStudent(Student student);
     void updateStudent(Long id, Student student);
     void deleteStudent(Long id);
-
+    void insertSpecialActivity(Long specialActivityId, Long studentId);
 }

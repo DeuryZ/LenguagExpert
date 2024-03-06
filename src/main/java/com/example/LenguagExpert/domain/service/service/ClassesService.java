@@ -9,5 +9,5 @@ public interface ClassesService {
     Classes getClassById(Long classId);
     Classes saveClass(Classes classes);
     void deleteClass(Long classId);
-    void updateClass(Classes classes);
+    void updateClass(Long id, Classes classes);
 }
